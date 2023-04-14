@@ -20,17 +20,17 @@ const RegisterPage = () => {
     dispatch(authRegister(values));
   };
   useEffect(() => {
-    document.title = "Sign up to Hilu";
+    document.title = "Sign up to Fyxion";
     if (auth.user) {
       navigate("/");
     }
     return () => {
-      document.title = "Hilu";
+      document.title = "Fyxion";
     };
   }, [auth]);
   return (
     <form
-      className="absolute bg-white p-6 sm:p-12 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg shadow-sm flex flex-col gap-y-4 items-center min-w-[350px] sm:min-w-[555px]"
+      className="absolute auth-page p-6 sm:p-12 top-1/2 left-1 translate-x-[15%] -translate-y-1/2 rounded-lg shadow-sm flex flex-col gap-y-4 items-center min-w-[350px] sm:min-w-[555px]"
       onSubmit={handleSubmit(handleRegister)}
     >
       <span className="text-2xl font-semibold mb-5">Sign Up!</span>
@@ -120,7 +120,7 @@ const RegisterPage = () => {
         </span>
       </span>
       <span className="text-xs  mt-auto text-gray-300 select-none">
-        © 2022 Hilu from Hyu
+        © 2022 Fyxion from Hyu
       </span>
     </form>
   );

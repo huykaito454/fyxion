@@ -17,7 +17,6 @@ const ProfilePage = () => {
   const { id } = useParams();
   const { user } = useSelector((state) => state.auth);
   const [userData, setUserData] = useState(user);
-  const [colorBackGround, setColorBackGround] = useState(null);
   const [updateAvatarIsOpen, setUpdateAvatarIsOpen] = useState(false);
   const [fileUpload, setFileUpload] = useState();
   const [urlImage, setUrlImage] = useState(null);
@@ -50,19 +49,14 @@ const ProfilePage = () => {
     }
   };
   useEffect(() => {
-    document.title = user.fullName + " | Hilu";
+    document.title = user.fullName + " | Fyxion";
     return () => {
-      document.title = "Hilu";
+      document.title = "Fyxion";
     };
-  }, [urlImage, user, colorBackGround, setColorBackGround]);
+  }, [urlImage, user]);
   return (
     <>
-      <div
-        className="page-full"
-        style={{
-          backgroundImage: `linear-gradient(to bottom , ${colorBackGround} 20%, white 50%)`,
-        }}
-      >
+      <div className="page-full">
         {urlImage !== null && (
           <div className="w-full h-screen fixed z-10">
             <div className="w-full p-3 bg-black bg-opacity-30 fixed  flex items-center justify-between">
@@ -77,7 +71,6 @@ const ProfilePage = () => {
                   className="button bg-gray-300 hover:bg-gray-300 bg-opacity-30 px-8 py-2 text-sm"
                   onClick={() => {
                     setUrlImage(null);
-                    setColorBackGround("#fcfcfd");
                   }}
                 >
                   Cancel
@@ -95,26 +88,20 @@ const ProfilePage = () => {
           </div>
         )}
         <div className="page-profile">
-          <div className="w-full rounded-br-lg rounded-bl-lg overflow-hidden relative f-center">
-            <ColorExtractor
-              getColors={(colors) => {
-                setColorBackGround(colors[1]);
-              }}
-            >
-              {urlImage !== null ? (
-                <img
-                  src={urlImage}
-                  alt=""
-                  className="w-full object-cover min-h-[400px] max-h-[400px]"
-                />
-              ) : (
-                <img
-                  src={userData.backGround}
-                  alt=""
-                  className="w-full object-cover min-h-[400px] max-h-[400px]"
-                />
-              )}
-            </ColorExtractor>
+          <div className="w-full overflow-hidden relative f-center">
+            {urlImage !== null ? (
+              <img
+                src={urlImage}
+                alt=""
+                className="w-full object-cover max-h-[300px]"
+              />
+            ) : (
+              <img
+                src={userData.backGround}
+                alt=""
+                className="w-full object-cover max-h-[300px]"
+              />
+            )}
             <label
               htmlFor="update-background"
               className="button bg-white cursor-pointer text-black hover:bg-grayCard absolute bottom-3 right-8"
@@ -136,7 +123,7 @@ const ProfilePage = () => {
               />
             </label>
           </div>
-          <div className="flex items-end justify-end relative px-8 py-8">
+          <div className="flex max-w-[1100px] mx-auto items-end justify-end relative px-8 py-8">
             <Dropdown
               label={
                 <div className="w-44 h-44 rounded-full bg-white border-4 border-white absolute left-[32px] top-[-60px] hover:border-gray-200 transition-all cursor-pointer active:scale-95 f-center overflow-hidden">
@@ -187,7 +174,7 @@ const ProfilePage = () => {
                     ({user.fullName})
                   </span>
                 </div>
-                <span className="font-medium text-sm">1,2K friends</span>
+                <span className="font-medium text-sm">1,2K followers</span>
               </div>
               <div className="flex items-center gap-2">
                 <button className="button">

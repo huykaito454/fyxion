@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { lazy } from "react";
 import { useSelector } from "react-redux";
 import { Route, Routes, useNavigate } from "react-router-dom";
-
 const UserLayout = lazy(() => import("../layout/UserLayout"));
 const HomePage = lazy(() => import("../pages/user-pages/HomePage"));
 const ProfilePage = lazy(() => import("../pages/user-pages/ProfilePage"));
@@ -13,7 +12,7 @@ const UserRouter = () => {
     if (!user) {
       navigate("/");
     }
-    document.title = "Hilu";
+    document.title = "Fyxion";
   }, [user]);
   return (
     <Routes>

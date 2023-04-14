@@ -43,7 +43,7 @@ const UpdateAvatarModal = () => {
   useEffect(() => {}, [fileUpload, urlImage]);
   return (
     <div className="modal-container">
-      <div className="font-medium p-5 text-xl border-b border-grayCard">
+      <div className="font-medium p-5 text-xl border-b border-slate-500">
         Update profile picture
       </div>
       <div className="p-5">
@@ -70,10 +70,10 @@ const UpdateAvatarModal = () => {
           <div className="f-center flex-col gap-12 h-full">
             <textarea
               rows="4"
-              className="p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 outline-none"
+              className="p-2.5 w-full text-sm  auth-page text-white rounded-lg border border-slate-500 outline-none"
               placeholder="Description..."
             ></textarea>
-            <div className="w-72 h-72 rounded-full bg-white border-4 border-white hover:border-gray-200 transition-all cursor-pointer active:scale-95 f-center overflow-hidden">
+            <div className="w-72 h-72 rounded-full bg-white border-4 border-slate-500 hover:border-slate-500 transition-all cursor-pointer active:scale-95 f-center overflow-hidden">
               <img src={urlImage} className="w-full object-cover"></img>
             </div>
           </div>
@@ -81,9 +81,9 @@ const UpdateAvatarModal = () => {
           <></>
         )}
       </div>
-      <div className="p-5 flex items-center justify-end w-full gap-2 mt-auto border-t border-grayCard">
+      <div className="p-5 flex items-center justify-end w-full gap-2 mt-auto border-t-slate-500">
         <button
-          className="button bg-grayCard text-black hover:bg-gray-300"
+          className="button bg-grayCardHover text-black hover:bg-grayCardHover"
           onClick={() => {
             setUrlImage(null);
           }}

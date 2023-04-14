@@ -1,27 +1,17 @@
 export const menu = [
   {
     name: "Home",
-    icon: "home",
+    icon: "music_note",
     link: "/",
   },
   {
-    name: "Explore",
-    icon: "explore",
-    link: "/explore",
+    name: "Feed",
+    icon: "bolt",
+    link: "/feed",
   },
   {
-    name: "Watch",
-    icon: "ondemand_video",
-    link: "/watch",
-  },
-  {
-    name: "Group",
-    icon: "group",
-    link: "/group",
-  },
-  {
-    name: "Marketplace",
-    icon: "storefront",
-    link: "/marketplace",
+    name: "Favorite",
+    icon: "favorite",
+    link: "/favorite",
   },
 ];

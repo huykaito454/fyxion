@@ -2,15 +2,15 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 const HeaderNav = ({ menu }) => {
   return (
-    <div className="flex items-center justify-center gap-2 w-[50%]">
+    <div className="flex items-center flex-col justify-center gap-2">
       {menu.map((item) => (
         <NavLink
           key={item.name}
           to={item.link}
           className={({ isActive }) =>
             isActive
-              ? "text-primary py-1 px-10 f-center"
-              : " text-slate-500 py-1 px-12 f-center rounded-md hover:bg-grayCardHover transition-all"
+              ? "text-primary py-1 f-center px-3"
+              : " text-slate-500 py-1 px-3 hover:bg-grayCardHover f-center rounded-md  transition-all"
           }
         >
           {({ isActive }) =>
